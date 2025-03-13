@@ -57,11 +57,11 @@ jobs:
       # - name: Run PHPStan for Static Analysis
       #   run: vendor/bin/phpstan analyse --level=8 src/
 
-      - name: Set up JDK 11 (For SonarCloud)
+      - name: Set up JDK 17 (For SonarCloud)
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '11'
+          java-version: '17'
           
       # 🔹 SonarQube Scan Step
       - name: SonarQube Scan
@@ -69,9 +69,9 @@ jobs:
           SONAR_TOKEN: aaaa97addbd1c8acef0e5467c34f1cdba81f78b2 
           SONAR_HOST_URL: "https://sonarcloud.io"  # Change if using a self-hosted SonarQube
         run: |
-          curl -sSLo sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+          curl -sSLo sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
           unzip sonar-scanner-cli.zip
-          export PATH="$PWD/sonar-scanner-4.6.2.2472-linux/bin:$PATH"
+          export PATH="$PWD/sonar-scanner-5.0.1.3006-linux/bin:$PATH"
           sonar-scanner \ 
             -Dsonar.projectKey=jdehbi_COLORADO1 \
             -Dsonar.organization=coloradotp \
