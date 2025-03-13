@@ -56,13 +56,12 @@ jobs:
 
       # - name: Run PHPStan for Static Analysis
       #   run: vendor/bin/phpstan analyse --level=8 src/
-      # 🔹 **Install Java 17 for SonarQube**
-      # ✅ Switch to Java 17 for SonarCloud
-      - name: Set up JDK 17 (For SonarCloud)
+
+      - name: Set up JDK 11 (For SonarCloud)
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '11'
           
       # 🔹 SonarQube Scan Step
       - name: SonarQube Scan
