@@ -75,7 +75,8 @@ jobs:
           sonar-scanner \ 
             -Dsonar.projectKey=jdehbi_COLORADO1 \
             -Dsonar.organization=coloradotp \
-            -Dsonar.sources=. \
+            -Dsonar.sources=app,routes,resources,config,database \
+            -Dsonar.exclusions=vendor/**,storage/**,tests/**,.github/** \
             -Dsonar.language=php \
             -Dsonar.php.coverage.reportPaths=coverage.xml \
             -Dsonar.host.url=$SONAR_HOST_URL \
