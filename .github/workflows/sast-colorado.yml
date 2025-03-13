@@ -69,9 +69,10 @@ jobs:
           SONAR_TOKEN: aaaa97addbd1c8acef0e5467c34f1cdba81f78b2 
           SONAR_HOST_URL: "https://sonarcloud.io"  # Change if using a self-hosted SonarQube
         run: |
-          curl -sSLo sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-          unzip sonar-scanner-cli.zip
-          export PATH="$PWD/sonar-scanner-5.0.1.3006-linux/bin:$PATH"
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-latest-linux.zip
+          unzip sonar-scanner-cli-latest-linux.zip
+          echo "SONAR_SCANNER_HOME=$(pwd)/sonar-scanner-*" >> $GITHUB_ENV
+          echo "$(pwd)/sonar-scanner-*/bin" >> $GITHUB_PATH
           sonar-scanner \ 
             -Dsonar.projectKey=jdehbi_COLORADO1 \
             -Dsonar.organization=coloradotp \
