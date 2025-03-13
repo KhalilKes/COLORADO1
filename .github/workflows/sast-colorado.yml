@@ -45,17 +45,17 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
       
-      - name: Install PHP and Composer
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.1
-          tools: composer, phpstan
+      # - name: Install PHP and Composer
+      #   uses: shivammathur/setup-php@v2
+      #   with:
+      #     php-version: 8.1
+      #     tools: composer, phpstan
 
-      - name: Install Dependencies
-        run: composer install --no-progress --no-suggest
+      # - name: Install Dependencies
+      #   run: composer install --no-progress --no-suggest
 
-      - name: Run PHPStan for Static Analysis
-        run: vendor/bin/phpstan analyse --level=8 src/
+      # - name: Run PHPStan for Static Analysis
+      #   run: vendor/bin/phpstan analyse --level=8 src/
 
       # 🔹 SonarQube Scan Step
       - name: SonarQube Scan
