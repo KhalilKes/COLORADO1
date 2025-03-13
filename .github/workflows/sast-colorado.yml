@@ -65,15 +65,12 @@ jobs:
           
       # 🔹 SonarQube Scan Step
       - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v2
         env:
           SONAR_TOKEN: aaaa97addbd1c8acef0e5467c34f1cdba81f78b2 
           SONAR_HOST_URL: "https://sonarcloud.io"  # Change if using a self-hosted SonarQube
-        run: |
-          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-latest-linux.zip
-          unzip sonar-scanner-cli-latest-linux.zip
-          echo "SONAR_SCANNER_HOME=$(pwd)/sonar-scanner-*" >> $GITHUB_ENV
-          echo "$(pwd)/sonar-scanner-*/bin" >> $GITHUB_PATH
-          sonar-scanner \ 
+        with:
+          args: 
             -Dsonar.projectKey=jdehbi_COLORADO1 \
             -Dsonar.organization=coloradotp \
             -Dsonar.sources=app,routes,resources,config,database \
