@@ -70,7 +70,7 @@ jobs:
           SONAR_TOKEN: aaaa97addbd1c8acef0e5467c34f1cdba81f78b2 
           SONAR_HOST_URL: "https://sonarcloud.io"  # Change if using a self-hosted SonarQube
         with:
-          args: 
-            -Dsonar.projectKey=jdehbi_COLORADO1 \
-            -Dsonar.organization=coloradotp \
+          args: >
+            -Dsonar.projectKey=jdehbi_COLORADO1
+            -Dsonar.organization=coloradotp
 
