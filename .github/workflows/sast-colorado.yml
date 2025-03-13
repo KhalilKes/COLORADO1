@@ -64,9 +64,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           
-      - name: Force Maven to Rebuild Dependencies
-        run: mvn clean install -U
-          
       # 🔹 SonarQube Scan Step
       - name: SonarQube Scan
         env:
