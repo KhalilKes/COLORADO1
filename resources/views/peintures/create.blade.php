@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 <div class="container">
-    <h1>Ajouter une Peinture</h1>
+    <h1>Ajouter une Peinture COLORADO</h1>
     <form action="{{ route('peintures.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
