@@ -45,32 +45,15 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
       
-      # - name: Install PHP and Composer
-      #   uses: shivammathur/setup-php@v2
-      #   with:
-      #     php-version: 8.1
-      #     tools: composer, phpstan
-
-      # - name: Install Dependencies
-      #   run: composer install --no-progress --no-suggest
-
-      # - name: Run PHPStan for Static Analysis
-      #   run: vendor/bin/phpstan analyse --level=8 src/
-
-      - name: Set up JDK 17 (For SonarCloud)
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
           
       # 🔹 SonarQube Scan Step
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2
         env:
-          SONAR_TOKEN: aaaa97addbd1c8acef0e5467c34f1cdba81f78b2 
+          SONAR_TOKEN: 60af6c2355e33f6be6c7de654d327fe1c6abb8c2
           SONAR_HOST_URL: "https://sonarcloud.io"  # Change if using a self-hosted SonarQube
         with:
           args: >
-            -Dsonar.projectKey=jdehbi_COLORADO1
-            -Dsonar.organization=coloradotp
+            -Dsonar.projectKey=khalilkes_colorado
+            -Dsonar.organization=khalilkes
 
